@@ -29,6 +29,7 @@ CS216-UTXO-Simulator/
 │   ├── transaction.py      # Transaction structure
 │   ├── validator.py        # Transaction validation rules
 │   ├── mempool.py           # Mempool management
+│   ├── test_scenarios.py    # Mandatory test cases
 │   └── block.py             # Mining simulation
 │
 ├── tests/
@@ -40,7 +41,7 @@ CS216-UTXO-Simulator/
 ```
 
 ---
-
+Note: The test_scenarios file is included in the src directory. The copy in the tests directory is only a mere reference and has no impact on the direct code performance
 ## Requirements to Run 
 
 * **Python 3.8+**
@@ -64,7 +65,7 @@ python src/main.py
 ```
 
 ---
-
+Note: The CLI is made to guide you through the process of using the entire simulator
 ## Features Implemented
 
 ### Core Components
@@ -96,6 +97,7 @@ python src/main.py
     
   The Repository consists of five source code files, each containing all the operations and the necessary management rules for the Blockchain, each named after the 'section' in the Blockchain transaction process it handles. When **main.py**is run, it displays the genesis block with all the owners in the system and the amount of bitcoin they own. It contains **10 different test cases**, each specifically aimed at understanding how transactions work and how Double-spending / 'Illegal' spending is handled in the Blockchain. 
 
+Note: test_scenarios is not an exclusive source of code but rather a branch for testing predefined cases.
  
 ---
 
