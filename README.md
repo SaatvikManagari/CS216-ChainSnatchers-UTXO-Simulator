@@ -140,6 +140,18 @@ Note: test_scenarios is not an exclusive source of code but rather a branch for 
 
 ---
 
+## CLI Interface:
+
+The Main page is as follows:
+Main Menu :
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+Enter choice: 
+
 ## 👥 Team Information
 
 **Team Name:** *Chain Snatchers*
@@ -156,6 +168,6 @@ Note: test_scenarios is not an exclusive source of code but rather a branch for 
 ## Notes
 
 The Project is a **local simulation** of the Blockchain environment, aiming to help understand the basic transaction politics 
-and core Blockchain concepts like Mempool Management, UTXOS. No cryptography, networking, or consensus algorithms are used. 
+and core Blockchain concepts like Mempool Management, UTXO. No cryptography, networking, or consensus algorithms are used. 
 
 
