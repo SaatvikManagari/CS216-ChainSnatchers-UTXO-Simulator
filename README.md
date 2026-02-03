@@ -94,7 +94,7 @@ python src/main.py
   * Miner receives total fees
  
     
-  The Repository consists of five source code files consisting of all the operations and the necessary management rules for the Blockchain each named after the 'section' in the Blockchain transaction process it deals with respectively . The file **main.py**  when run displays the genesis block with the all the owners in the system and the amount of bitcoin they own. It contains **10 different test cases** each specifically aims to understand how transactions work and how Double-spending / 'Illegal' spendings are dealt with in Blcokchain. 
+  The Repository consists of five source code files, each containing all the operations and the necessary management rules for the Blockchain, each named after the 'section' in the Blockchain transaction process it handles. When **main.py**is run, it displays the genesis block with all the owners in the system and the amount of bitcoin they own. It contains **10 different test cases**, each specifically aimed at understanding how transactions work and how Double-spending / 'Illegal' spending is handled in the Blockchain. 
 
  
 ---
@@ -115,7 +115,7 @@ python src/main.py
 
 * Basic valid transaction
 * Multiple-input transactions
-* Double-spend in same transaction
+* Double-spend in the same transaction
 * Mempool double-spend detection
 * Insufficient funds
 * Negative output amount
@@ -132,9 +132,9 @@ python src/main.py
 
 * **In-memory storage** using Python dictionaries and sets
 * **First-seen rule** for mempool conflict resolution
-* **Reject spending of unconfirmed UTXOs** (simpler & explicitly documented)
+* **Reject spending of unconfirmed UTXOs** 
 * Clear error messages for all invalid cases
-* Reject Transactions with owners / receivers not part of the system
+* Reject Transactions with owners/receivers not part of the system
 
 ---
 
@@ -153,7 +153,7 @@ python src/main.py
 
 ## Notes
 
-The Project is a **local simulation** of the Blockchain environment aiming to help understand the basic transaction politics 
-and core Blockchain concepts like Mempool Management , UTXOS . No cryptography, networking, or consensus algorithms are used. 
+The Project is a **local simulation** of the Blockchain environment, aiming to help understand the basic transaction politics 
+and core Blockchain concepts like Mempool Management, UTXOS. No cryptography, networking, or consensus algorithms are used. 
 
 
