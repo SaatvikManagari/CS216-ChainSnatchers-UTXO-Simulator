@@ -151,6 +151,7 @@ Main Menu :
 4. Mine block
 5. Run test scenarios
 6. Exit
+
 Enter choice: 
 
 ## 👥 Team Information
