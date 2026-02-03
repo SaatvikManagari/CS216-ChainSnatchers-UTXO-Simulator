@@ -1,0 +1,241 @@
+=== Bitcoin Transaction Simulator ===
+Initial UTXOs ( Genesis Block ) :
+- Alice : 50.0 BTC
+- Bob : 30.0 BTC
+- Charlie : 20.0 BTC
+- David : 10.0 BTC
+- Eve : 5.0 BTC
+
+Main Menu :
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. Run test scenarios
+6. Exit
+
+=========================================================
+choice 1:  Create new transaction
+
+    Enter choice : 1
+    Sender: Alice
+    Receiver: Bob
+    Amount: 10
+    Transaction fee: 0.001
+    
+    Creating transaction:
+    Transaction valid! Fee: 0.001 BTC
+    Transaction ID: Alice_Bob_638
+    Transaction added to mempool.
+    Mempool now has 1 transactions.
+
+
+=========================================================
+choice 2: View UTXO set
+
+    Enter choice : 2
+
+    UTXO SET:
+    genesis_alice[0] -> Alice : 50.0 BTC
+    genesis_bob[0] -> Bob : 30.0 BTC
+    genesis_charlie[0] -> Charlie : 20.0 BTC
+    genesis_david[0] -> David : 10.0 BTC
+    genesis_eve[0] -> Eve : 5.0 BTC
+
+
+=========================================================
+choice 3: View mempool
+
+    Enter choice : 3
+    \MEMPOOL: 
+    TX ID: Alice_Bob_638, Fee: 0.001
+
+
+=========================================================
+choice 4: Mine block
+
+   Enter choice : 4
+
+   Mining block
+   Selected 1 transactions from mempool .
+   Total fees: 0.001 BTC
+   Mined transaction: Alice_Bob_638
+   Block mined successfully!
+   Miner rewarded 0.001BTC
+   Removed 1 transactions from mempool
+
+=========================================================
+choice 5: Run test scenarios
+
+		Enter choice : 5
+
+		=== Test Case Menu ===
+		1. Basic Valid Transaction
+		2. Multiple Inputs Transaction
+		3. Double-Spend in Same Transaction
+		4. Mempool Double-Spend 
+		5. Insufficient Funds
+		6. Negative Amount
+		7. Zero Fee Transaction
+		8. Race Attack Simulation
+		9. Complete Mining Flow
+	 10. Unconfirmed Chain
+
+
+---------------------------------------------------------
+Enter test choice : 1
+
+[Test 1] Basic Valid Transaction
+
+      Creating transaction:
+      Transaction valid! Fee: 0.001 BTC
+      Transaction ID: Alice_Bob_806
+      Transaction added to mempool.
+      Mempool now has 1 transactions. 
+      Transaction created.
+
+
+---------------------------------------------------------
+Enter test choice : 2
+
+[Test 2] Multiple Inputs Transaction
+
+			Creating transaction:
+			Transaction valid! Fee: 0.001 BTC
+			Transaction ID: Alice_Bob_45
+			Transaction added to mempool.
+			Mempool now has 1 transactions.
+
+
+
+---------------------------------------------------------
+Enter test choice : 3
+
+[Test 3] Double-Spend in Same Transaction
+
+			Rejected: Double-spend inside same transaction
+			Rejected: Insufficient funds
+
+
+---------------------------------------------------------
+Enter test choice : 4
+
+[Test 4] Mempool Double-Spend
+	
+			Rejected: Insufficient funds
+			Rejected: Insufficient funds
+
+
+---------------------------------------------------------
+Enter test choice : 5
+
+[Test 5] Insufficient Funds
+
+			Rejected: Insufficient funds
+
+---------------------------------------------------------
+Enter test choice : 6
+
+[Test 6] Negative Amount
+
+			Rejected: Negative or zero amount
+
+
+---------------------------------------------------------
+Enter test choice : 7
+
+[Test 7] Zero Fee Transaction
+
+			Creating transaction:
+			Transaction valid! Fee: 0 BTC
+			Transaction ID: Eve_Alice_686
+			Transaction added to mempool.
+			Mempool now has 1 transactions.
+
+
+---------------------------------------------------------
+Enter test choice : 8
+
+[Test 8] Race Attack (First-Seen Rule)
+
+			Creating transaction:
+			Transaction valid! Fee: 0.001 BTC
+			Transaction ID: Alice_Merchant_6
+			Transaction added to mempool.
+			Mempool now has 1 transactions.
+
+      Rejected: Double spend detected in mempool
+
+
+---------------------------------------------------------
+Enter test choice : 9
+
+		Creating transaction:
+		Transaction valid! Fee: 0.001 BTC
+		Transaction ID: Alice_Bob_886
+		Transaction added to mempool.
+		Mempool now has 1 transactions.
+		
+		
+		Creating transaction:
+		Transaction valid! Fee: 0.001 BTC
+		Transaction ID: Bob_Charlie_894
+		Transaction added to mempool.
+		Mempool now has 2 transactions.
+		
+		
+		Creating transaction:
+		Transaction valid! Fee: 0.001 BTC
+		Transaction ID: Charlie_David_651
+		Transaction added to mempool.
+		Mempool now has 3 transactions.
+
+		Mempool size before mining: 3
+		
+		Mining block
+		Selected 3 transactions from mempool .
+		Total fees: 0.001 BTC
+		Mined transaction: Alice_Bob_886
+		Total fees: 0.002 BTC
+		Mined transaction: Bob_Charlie_894
+		Total fees: 0.003 BTC
+		Mined transaction: Charlie_David_651
+		Block mined successfully!
+		Miner rewarded 0.003BTC
+		Removed 3 transactions from mempool
+		
+		 POST-MINING VERIFICATION
+
+		Updated UTXO SET:
+		Alice_Bob_886[0] -> Bob : 10 BTC
+		Alice_Bob_886[1] -> Alice : 39.999 BTC
+		Bob_Charlie_894[0] -> Charlie : 5 BTC
+		Bob_Charlie_894[1] -> Bob : 24.999 BTC
+		Charlie_David_651[0] -> David : 3 BTC
+		Charlie_David_651[1] -> Charlie : 16.999 BTC
+		reward_1770139164[0] -> Miner1 : 0.003 BTC
+		
+		Miner balance: 0.003 BTC
+		Mempool size after mining: 0
+
+---------------------------------------------------------
+Enter test choice : 10
+
+[Test 10] Unconfirmed Chain
+Rejected by design: cannot spend unconfirmed UTXO
+
+
+=========================================================
+
+Choice 6: Exit
+    Enter choice : 6
+    Exiting simulator.
+    
+     
+     
+
+
+     
+
+
+
