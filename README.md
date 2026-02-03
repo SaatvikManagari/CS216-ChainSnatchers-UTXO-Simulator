@@ -143,6 +143,7 @@ Note: test_scenarios is not an exclusive source of code but rather a branch for 
 ## CLI Interface:
 
 The Main page is as follows:
+
 Main Menu :
 1. Create new transaction
 2. View UTXO set
